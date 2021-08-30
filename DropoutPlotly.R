@@ -1,5 +1,5 @@
 library(plotly)
-df <- read.csv(file.choose(),header = TRUE) #choose DeltaDropoutPlotly.csv: plot input file with ID number, ORF 1 CT, and N CT value
+df <- read.csv(file.choose(),header = TRUE) #choose DeltaDropoutPlotly.csv: plot input file with ID number, ORF 1ab CT, and N CT value
 
 fig <- df %>%
   plot_ly(
