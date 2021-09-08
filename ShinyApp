@@ -86,7 +86,7 @@ server <- function(input, output, session) {
     x <- data()[, c(input$xcol, input$ycol)]
     
     p <- ggplot(x, aes_string(input$xcol, input$ycol,label = factor(data()[, 1])))
-    p <- p + geom_point() #+ geom_point()
+    p <- p + geom_point()
     plotly_p <- plotly::ggplotly(p)
     plotly_p
     session_store$plt <- plotly_p
