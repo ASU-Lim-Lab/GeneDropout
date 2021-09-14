@@ -7,7 +7,7 @@ ui <- fluidPage(
   
   sidebarPanel(
     # User can input file
-    downloadButton("download_plotly_widget", "Download plotly graph"),
+    downloadButton("download_plotly_widget", "Download Plotly Graph"),
     tags$hr(),
     fileInput(inputId = "file1", label = "Choose CSV File",
               multiple = FALSE,
@@ -86,7 +86,7 @@ server <- function(input, output, session) {
     x <- data()[, c(input$xcol, input$ycol)]
     
     p <- ggplot(x, aes_string(input$xcol, input$ycol,label = factor(data()[, 1])))
-    p <- p + geom_point()
+    p <- p + geom_point()+theme_bw()
     plotly_p <- plotly::ggplotly(p)
     plotly_p
     session_store$plt <- plotly_p
